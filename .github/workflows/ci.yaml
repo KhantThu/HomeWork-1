@@ -12,17 +12,15 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-      
+          cache: 'npm'  # Built-in npm cache by setup-node
+
       - name: Install dependencies
-        run: npm install
-      
+        run: npm ci  # better than `npm install` for CI
+
       - name: Build the project
         run: npm run build
-
-      
-  
