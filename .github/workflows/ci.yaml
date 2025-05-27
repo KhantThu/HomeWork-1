@@ -22,7 +22,7 @@ jobs:
       - name: Cache Node.js modules
         uses: actions/cache@v4
         with:
-          path: node-modules
+          path: node_modules
           key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lock.json') }}
           
       - name: Install dependencies
@@ -47,7 +47,7 @@ jobs:
       - name: Cache Node.js modules
         uses: actions/cache@v4
         with:
-          path: node-modules
+          path: node_modules
           key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lock.json') }}
 
       - name: Install dependencies
