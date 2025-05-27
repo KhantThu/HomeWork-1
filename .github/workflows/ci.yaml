@@ -20,6 +20,7 @@ jobs:
           cache: 'npm'  # Built-in npm cache by setup-node
 
       - name: Cache Node.js modules
+        id: cache-node
         uses: actions/cache@v4
         with:
           path: node_modules
@@ -45,6 +46,7 @@ jobs:
           cache: 'npm'  # Built-in npm cache by setup-node
 
       - name: Cache Node.js modules
+        if: steps.cache-node.outputs.cache-hit != 'true'
         uses: actions/cache@v4
         with:
           path: node_modules
